@@ -7,9 +7,10 @@ module Emojify
       source_root File.expand_path('../../../../../vendor/assets/images', __FILE__)
 
       def copy_images
-        say_status("copying", "Emojis to public/images/emojis", :green)
-        directory "emojis",     "public/images/emojis"
-        copy_file "stucco.png", "public/images/stucco.png"
+        copy_to_dir = 'vendor/assets/images/emojis'
+        say_status("copying",   "Emojis to #{copy_to_dir}", :green)
+        directory "emojis",     copy_to_dir
+        copy_file "stucco.png", "#{copy_to_dir}/stucco.png"
       end
 
     end

@@ -4,24 +4,33 @@ module Emojify
   end
 
   def emojify(text)
-    text.gsub(/:(.*?):/) { |word| "<image src='#{Emojify::Config.image_directory}/#{$1}.png'/>" }
+    text.gsub(/:(.*?):/) do |word| 
+      "<image src='#{Emojify::Config.image_directory}/#{$1}.png' height='#{Emojify::Config.height}' width='#{Emojify::Config.width}'/>"
+    end
   end
 
   module ClassMethods
-    def emojify_image_dir(dir)
-      Config.image_directory = dir
+    def emoji(options={})
+      Config.image_directory  = options[:directory]
+      Config.width            = options[:width]
+      Config.height           = options[:height]
     end
 
-    def dir
-      Config.image_directory
-    end
   end
 
   class Config
     class << self
-      attr_writer :image_directory
+      attr_writer :image_directory, :width, :height
       def image_directory
-        @image_directory || 'images/emojis'
+        @image_directory || '/assets/emojis'
+      end
+
+      def width
+        @width || 20
+      end
+
+      def height
+        @height || 20
       end
     end
   end
