@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Emojify::VERSION
   gem.authors       = ["Robert Evans"]
   gem.email         = ["robert@codewranglers.org"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Use emoji in your content. Pass it a string and it will return the string with emoji images.}
+  gem.summary       = %q{Use emoji in your content}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
@@ -18,4 +18,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   
   gem.add_development_dependency 'minitest'
+  gem.add_dependency "railties", ">= 3.1.0", "< 5.0"
+  gem.add_dependency "thor",     "~> 0.16"
 end

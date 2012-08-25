@@ -4,7 +4,7 @@ module Emojify
   end
 
   def emojify(text)
-    text.gsub(/:(.*?):/) { |word| "#{Emojify::Config.image_directory}/#{$1}.png" }
+    text.gsub(/:(.*?):/) { |word| "<image src='#{Emojify::Config.image_directory}/#{$1}.png'/>" }
   end
 
   module ClassMethods
