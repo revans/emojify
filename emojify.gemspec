@@ -1,11 +1,10 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'emojify/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "emojify"
-  gem.version       = Emojify::VERSION
+  gem.version       = '0.0.1'
   gem.authors       = ["Robert Evans"]
   gem.email         = ["robert@codewranglers.org"]
   gem.description   = %q{Use emoji in your content. Pass it a string and it will return the string with emoji images.}
