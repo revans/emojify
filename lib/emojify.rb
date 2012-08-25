@@ -21,7 +21,7 @@ module Emojify
     class << self
       attr_writer :image_directory
       def image_directory
-        @image_directory || 'images/emojify'
+        @image_directory || 'images/emojis'
       end
     end
   end
