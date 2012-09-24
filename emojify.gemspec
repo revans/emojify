@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name          = "emojify"
-  gem.version       = '0.0.4'
+  gem.version       = '0.0.6'
   gem.authors       = ["Robert Evans"]
   gem.email         = ["robert@codewranglers.org"]
   gem.description   = %q{Use emoji in your content. Pass it a string and it will return the string with emoji images.}
